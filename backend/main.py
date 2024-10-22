@@ -1,7 +1,7 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import JSONResponse
-from ocr import process_ocr
-from rag import process_rag
+from ocr import *
+from backend.rag.rag import process_rag
 from db import store_report, get_contacts
 import uvicorn
 
