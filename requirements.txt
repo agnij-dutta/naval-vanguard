@@ -1,7 +1,9 @@
-fastapi
-uvicorn
-pytesseract
-Pillow
 transformers
+datasets
 torch
+opencv-python
+pytesseract
+spacy
 flask
+flask-cors
+leaflet

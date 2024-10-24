@@ -1,8 +1,12 @@
 import re
 import json
+import os
 
 def read_maritime_data(file_path):
     """Read maritime data from a markdown file."""
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"The file {file_path} does not exist.")
+    
     with open(file_path, 'r') as file:
         return file.read()
 
@@ -12,17 +16,17 @@ def parse_maritime_data(data):
         "maritime_reports": [],
         "reconnaissance_notes": [],
         "communication_messages": [],
-        "geographical_data": {
+        "geographical_data": [{
             "maritime_zones": [],
             "shipping_lanes": []
-        }
+        }]
     }
 
     # Split the data into sections based on known headings
-    sections = data.split("##")
+    sections = data.split("###")
     for section in sections:
         section = section.strip()
-        if section.startswith("1."):
+        if section.startswith("1.1"):
             # Maritime Reports
             reports = re.findall(r"Date: (.+?)\nTime: (.+?)\nLocation: (.+?)\nReport: (.+?)(?=\n\n|\Z)", section, re.DOTALL)
             for report in reports:
@@ -56,20 +60,24 @@ def parse_maritime_data(data):
                     "details": [detail.strip() for detail in details]
                 })
 
-        elif section.startswith("2."):
+        elif section.startswith("1.4"):
             # Geographical Data
-            geo_data_match = re.search(r"(\[.+?\])", section, re.DOTALL)
+            geo_data_match = re.search(r"(\{.*?\})", section, re.DOTALL)  # Adjusted regex to match JSON object
             if geo_data_match:
                 geo_data_json = geo_data_match.group(1)
-                geo_data = json.loads(geo_data_json)
-                parsed_data["geographical_data"]["maritime_zones"] = geo_data["maritime_zones"]
-                parsed_data["geographical_data"]["shipping_lanes"] = geo_data["shipping_lanes"]
+                try:
+                    geo_data = json.loads(geo_data_json)
+                    parsed_data["geographical_data"]["maritime_zones"] = geo_data["maritime_zones"]
+                    parsed_data["geographical_data"]["shipping_lanes"] = geo_data["shipping_lanes"]
+                except json.JSONDecodeError as e:
+                    print(f"JSON decoding error: {e}")
+                    print("Geo Data JSON:", geo_data_json)  # Debugging line
 
     return parsed_data
 
 # Main execution
 if __name__ == "__main__":
-    file_path = 'maritime-dataset-v1.md'
+    file_path = '/home/agnij/Desktop/maritime-situational-awareness/data/Maritime Situational Awareness/maritime-dataset-v1.md'
     data = read_maritime_data(file_path)
     parsed_data = parse_maritime_data(data)
 

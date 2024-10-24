@@ -1,11 +1,16 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import JSONResponse
-from ocr import *
+from backend.scripts.ocr import *
 from backend.rag.rag import process_rag
 from db import store_report, get_contacts
 import uvicorn
 
 app = FastAPI()
+
+'''
+THIS CODE IS SHIT, DONT FOLLOW THIS CODE JUST COOK UP SOMETHING USING FASTAPI. IF NOT POSSIBLE THEN PIVOT TO FLASK. BUT NOT DJANGO.
+DJANGO TOO HARD
+'''
 
 # Route to handle OCR
 @app.post("/process_report/")
