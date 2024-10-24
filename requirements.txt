@@ -7,3 +7,5 @@ spacy
 flask
 flask-cors
 leaflet
+opencv
+langchain
