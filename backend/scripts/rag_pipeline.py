@@ -10,7 +10,7 @@ tokenizer = RagTokenizer.from_pretrained(model_name)
 model = RagSequenceForGeneration.from_pretrained(model_name)
 
 # Initialize the retriever with the loaded passages
-retriever = RagRetriever.from_pretrained(model_name, index_name="exact", use_dummy_dataset=True)
+retriever = RagRetriever.from_pretrained(model_name, index_name="exact", use_dummy_dataset=True, trust_custom_code=True)
 
 def process_message_rag_pipeline(message, detail, tokenizer=tokenizer, model=model, retriever=retriever):
     prompt = f"Extract any detail you find about {detail} from the report field of the given data: {message}"

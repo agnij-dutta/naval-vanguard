@@ -1,7 +1,6 @@
 import re
 import json
 from rag_pipeline import process_message_rag_pipeline
-
     
 def clean_text(text):
     return text.replace("\u00c2\u00b0", "°")
@@ -19,6 +18,7 @@ def extract_from_reports(reports):
             "coordinates": extract_coordinates(report.get("Report")),
             "heading": extract_heading(report.get("Report")),
             "speed": extract_speed(report.get("Report")),
+            "message": report.get("Report"),
             "alert": process_message_rag_pipeline(report.get("Report"), "status/priority of the message into the following categories: urgent/immediate/top secret/secret/confidential/routine/secret, if its urgent or immediate return 1 else 0"), 
             "imo_number": extract_imo_number(report.get("Report")),
             "priority": process_message_rag_pipeline(report.get("Report"), "status/priority of the message into the following categories: urgent/immediate/top secret/secret/confidential/routine/secret"),
@@ -108,7 +108,6 @@ def extract_additional_info(text):
     
     # If none of the conditions are met, return no additional info
     return "No additional info"
-
 
 # Parsing the dataset
 def parse_dataset(data):

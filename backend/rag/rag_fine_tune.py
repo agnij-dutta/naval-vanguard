@@ -12,12 +12,12 @@ tokenizer = RagTokenizer.from_pretrained(model_name)
 model = RagSequenceForGeneration.from_pretrained(model_name)
 
 # Initialize the retriever with the loaded passages
-retriever = RagRetriever.from_pretrained(model_name, index_name="exact", use_dummy_dataset=True)
+retriever = RagRetriever.from_pretrained(model_name, index_name="exact", use_dummy_dataset=True, trust_custom_code=True)
 dataset = Dataset.from_dict(parsed_data)
 
 # Tokenize and prepare inputs
 def tokenize_function(examples):
-    return tokenizer(examples['report'], padding="max_length", truncation=True, return_tensors="pt")
+    return tokenizer(examples['message'], padding="max_length", truncation=True, return_tensors="pt")
 
 tokenized_dataset = dataset.map(tokenize_function, batched=True)
 
