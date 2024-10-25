@@ -23,10 +23,6 @@ def extract_from_reports(reports):
             "imo_number": extract_imo_number(report.get("Report")),
             "priority": process_message_rag_pipeline(report.get("Report"), "status/priority of the message into the following categories: urgent/immediate/top secret/secret/confidential/routine/secret"),
         }
-        for field in ["date", "time", "location", "vessel_name", "coordinates", "heading", "speed", "imo_number"]:
-            if structured_report[field] is None or structured_report[field] == "":
-                # Call the RAG pipeline to try to extract missing information
-                structured_report[field] = process_message_rag_pipeline(report.get("Report"), f"Extract {field} from the report")
 
         parsed_reports.append(structured_report)
         parsed_reports.append(structured_report)
@@ -123,7 +119,7 @@ def parse_dataset(data):
     }
 
 # Load the dataset from JSON
-with open('/home/agnij/Desktop/maritime-situational-awareness/data/extracted_data.json', 'r') as f:
+with open(r'C:\Users\Agnij\Coding_projects\naval-vanguard\data\extracted_data.json', 'r') as f:
     data = json.load(f)
 
 # Parse the data

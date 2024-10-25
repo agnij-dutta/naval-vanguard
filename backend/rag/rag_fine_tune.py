@@ -1,9 +1,9 @@
-from transformers import RagTokenizer, RagRetriever, RagSequenceForGeneration, Trainer, TrainingArguments
+from transformers import RagTokenizer, RagRetriever, RagSequenceForGeneration, Trainer, TrainingArguments, GenerationConfig
 import torch
 import json
 from datasets import Dataset
 
-with open('parsed_maritime_data.json', 'r') as infile:
+with open(r'..\backend\scripts\parsed_maritime_data.json', 'r') as infile:
     parsed_data = json.load(infile)
 
 # Load pre-trained RAG model and tokenizer
@@ -12,8 +12,10 @@ tokenizer = RagTokenizer.from_pretrained(model_name)
 model = RagSequenceForGeneration.from_pretrained(model_name)
 
 # Initialize the retriever with the loaded passages
-retriever = RagRetriever.from_pretrained(model_name, index_name="exact", use_dummy_dataset=True, trust_custom_code=True)
+retriever = RagRetriever.from_pretrained(model_name, index_name="exact", use_dummy_dataset=True, trust_remote_code=True)
 dataset = Dataset.from_dict(parsed_data)
+
+model.set_retriever(retriever)
 
 # Tokenize and prepare inputs
 def tokenize_function(examples):
