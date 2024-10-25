@@ -1,4 +1,8 @@
 from transformers import RagTokenizer, RagRetriever, RagSequenceForGeneration
+import warnings
+
+# Suppress specific warnings
+warnings.filterwarnings("ignore", category=UserWarning, module='transformers')
 
 # Load pre-trained RAG model and tokenizer
 model_name = "facebook/rag-token-nq"
@@ -14,7 +18,7 @@ model.set_retriever(retriever)
 def process_message_rag_pipeline(message, detail, tokenizer=tokenizer, model=model, retriever=retriever):
     prompt = f"Extract any detail you find about {detail} from the report field of the given data: {message}"
     
-    # Tokenize the input message
+    # Tokenize the input message using RagTokenizer
     inputs = tokenizer([prompt], return_tensors="pt")
 
     # Retrieve relevant documents

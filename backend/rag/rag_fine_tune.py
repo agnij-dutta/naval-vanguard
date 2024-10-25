@@ -1,9 +1,8 @@
 from transformers import RagTokenizer, RagRetriever, RagSequenceForGeneration, Trainer, TrainingArguments, GenerationConfig
-import torch
 import json
 from datasets import Dataset
 
-with open(r'..\backend\scripts\parsed_maritime_data.json', 'r') as infile:
+with open(r'parsed_maritime_data.json', 'r') as infile:
     parsed_data = json.load(infile)
 
 # Load pre-trained RAG model and tokenizer
@@ -11,9 +10,14 @@ model_name = "facebook/rag-token-nq"
 tokenizer = RagTokenizer.from_pretrained(model_name)
 model = RagSequenceForGeneration.from_pretrained(model_name)
 
+for report in parsed_data["parsed_reports"]:
+    for key in report:
+        if "TypeError" in str(report[key]):
+            report[key] = None
+
 # Initialize the retriever with the loaded passages
-retriever = RagRetriever.from_pretrained(model_name, index_name="exact", use_dummy_dataset=True, trust_remote_code=True)
-dataset = Dataset.from_dict(parsed_data)
+retriever = RagRetriever.from_pretrained(model_name, index_name="exact", use_dummy_dataset=False)
+dataset = Dataset.from_list(parsed_data["parsed_reports"]+parsed_data["parsed_comm_messages"])
 
 model.set_retriever(retriever)
 
@@ -22,11 +26,6 @@ def tokenize_function(examples):
     return tokenizer(examples['message'], padding="max_length", truncation=True, return_tensors="pt")
 
 tokenized_dataset = dataset.map(tokenize_function, batched=True)
-
-# Initialize model and tokenizer
-model_name = "facebook/rag-token-nq"
-tokenizer = RagTokenizer.from_pretrained(model_name)
-model = RagSequenceForGeneration.from_pretrained(model_name)
 
 # Fine-tuning settings
 training_args = TrainingArguments(
