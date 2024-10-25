@@ -369,6 +369,7 @@
             "dtg": "201700Z OCT 24",
             "message": "1. DETECTED SUBMARINE PERISCOPE AT 13\u00c2\u00b045'N, 71\u00c2\u00b023'W AT 1645Z.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": {
                 "latitude": "13\u00b045'N",
                 "longitude": "71\u00b023'W"
@@ -382,6 +383,7 @@
             "dtg": "201830Z OCT 24",
             "message": "1. WEATHER ADVISORY: TROPICAL STORM APPROACHING.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -392,6 +394,7 @@
             "dtg": "202000Z OCT 24",
             "message": "1. SPOTTED VESSEL MATCHING DESCRIPTION OF WANTED SMUGGLING SHIP.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "Suspicious activity detected"
         },
@@ -402,6 +405,7 @@
             "dtg": "202130Z OCT 24",
             "message": "1. COMPLETED UNDERWATER MAPPING OF SECTOR 4.",
             "alert": 0,
+            "priotiy": "CONFIDENTIAL",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -412,6 +416,7 @@
             "dtg": "202300Z OCT 24",
             "message": "1. PORT CLOSURE DUE TO MAINTENANCE.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -422,6 +427,7 @@
             "dtg": "210030Z OCT 24",
             "message": "1. DISTRESS CALL RECEIVED FROM YACHT \"SERENITY\"",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -432,6 +438,7 @@
             "dtg": "210200Z OCT 24",
             "message": "1. OIL SPILL DETECTED AT 13\u00c2\u00b025'N, 71\u00c2\u00b020'W.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": {
                 "latitude": "13\u00b025'N",
                 "longitude": "71\u00b020'W"
@@ -445,6 +452,7 @@
             "dtg": "210330Z OCT 24",
             "message": "1. INTERCEPTED FISHING VESSEL \"LUCKY STAR\" IN PROTECTED MARINE RESERVE.",
             "alert": 0,
+            "priotiy": "PRIORITY",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -455,6 +463,7 @@
             "dtg": "210500Z OCT 24",
             "message": "1. INTERCEPTED COMMUNICATIONS SUGGEST POSSIBLE HOSTILE SUBMARINE ACTIVITY.",
             "alert": 0,
+            "priotiy": "SECRET",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -465,6 +474,7 @@
             "dtg": "210630Z OCT 24",
             "message": "1. LIGHTHOUSE AT 13\u00c2\u00b005'N, 70\u00c2\u00b020'W UNDERGOING URGENT REPAIRS.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": {
                 "latitude": "13\u00b005'N",
                 "longitude": "70\u00b020'W"
@@ -478,6 +488,7 @@
             "dtg": "210800Z OCT 24",
             "message": "1. INTERCEPTED SUSPICIOUS VESSEL AT 13\u00c2\u00b015'N, 71\u00c2\u00b010'W.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": {
                 "latitude": "13\u00b015'N",
                 "longitude": "71\u00b010'W"
@@ -491,6 +502,7 @@
             "dtg": "210930Z OCT 24",
             "message": "1. TEMPORARY FLIGHT RESTRICTIONS IMPLEMENTED.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -501,6 +513,7 @@
             "dtg": "211100Z OCT 24",
             "message": "1. DISCOVERED PREVIOUSLY UNKNOWN HYDROTHERMAL VENT FIELD.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -511,6 +524,7 @@
             "dtg": "211230Z OCT 24",
             "message": "1. DETECTED FAST BOAT APPROACHING FROM INTERNATIONAL WATERS.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -521,6 +535,7 @@
             "dtg": "211400Z OCT 24",
             "message": "1. PIRACY ALERT ISSUED FOR WATERS NEAR 13\u00c2\u00b000'N, 71\u00c2\u00b030'W.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": {
                 "latitude": "13\u00b000'N",
                 "longitude": "71\u00b030'W"
@@ -534,6 +549,7 @@
             "dtg": "211530Z OCT 24",
             "message": "1. COMMENCED ANTI-SUBMARINE WARFARE EXERCISES.",
             "alert": 0,
+            "priotiy": "CONFIDENTIAL",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -544,6 +560,7 @@
             "dtg": "211700Z OCT 24",
             "message": "1. OBSERVED LARGE POD OF HUMPBACK WHALES.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -554,6 +571,7 @@
             "dtg": "211830Z OCT 24",
             "message": "1. UNIDENTIFIED AIRCRAFT DETECTED.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -564,6 +582,7 @@
             "dtg": "212000Z OCT 24",
             "message": "1. COMPLETED PLACEMENT OF UNDERWATER SENSORS.",
             "alert": 0,
+            "priotiy": "SECRET",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -574,6 +593,7 @@
             "dtg": "212130Z OCT 24",
             "message": "1. SEVERE STORM WARNING ISSUED.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -584,6 +604,7 @@
             "dtg": "212300Z OCT 24",
             "message": "1. LOCATED MISSING YACHT \"SERENITY\".",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -594,6 +615,7 @@
             "dtg": "220030Z OCT 24",
             "message": "1. COMPLETED RESUPPLY OF SUBMARINE DELTA.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -604,6 +626,7 @@
             "dtg": "220200Z OCT 24",
             "message": "1. DETECTED UNUSUAL ELECTROMAGNETIC EMISSIONS.",
             "alert": 0,
+            "priotiy": "SECRET",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -614,6 +637,7 @@
             "dtg": "220330Z OCT 24",
             "message": "1. RESCUED 5 CREW MEMBERS FROM SINKING FISHING VESSEL.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -624,6 +648,7 @@
             "dtg": "220500Z OCT 24",
             "message": "1. COMPLETED SURVEY OF SECTOR 7B.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -634,6 +659,7 @@
             "dtg": "220630Z OCT 24",
             "message": "1. LARGE DEBRIS FIELD SPOTTED AT 12\u00c2\u00b035'N, 71\u00c2\u00b018'W.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": {
                 "latitude": "12\u00b035'N",
                 "longitude": "71\u00b018'W"
@@ -647,6 +673,7 @@
             "dtg": "220800Z OCT 24",
             "message": "1. RUNWAY 27 CLOSED DUE TO DAMAGE FROM HEAVY STORM.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -657,6 +684,7 @@
             "dtg": "220930Z OCT 24",
             "message": "1. MAYDAY MAYDAY MAYDAY.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -667,6 +695,7 @@
             "dtg": "221100Z OCT 24",
             "message": "1. DETECTED MULTIPLE UNDERSEA CONTACTS.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -677,6 +706,7 @@
             "dtg": "221230Z OCT 24",
             "message": "1. INTERCEPTED SUSPICIOUS VESSEL AT 13\u00c2\u00b015'N, 70\u00c2\u00b040'W.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": {
                 "latitude": "13\u00b015'N",
                 "longitude": "70\u00b040'W"
@@ -690,6 +720,7 @@
             "dtg": "221400Z OCT 24",
             "message": "1. DISCOVERED UNUSUAL CORAL FORMATION AT 12\u00c2\u00b045'N, 71\u00c2\u00b020'W.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": {
                 "latitude": "12\u00b045'N",
                 "longitude": "71\u00b020'W"
@@ -703,6 +734,7 @@
             "dtg": "221530Z OCT 24",
             "message": "1. UNIDENTIFIED SURFACE CONTACTS APPROACHING TERRITORIAL WATERS.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -713,6 +745,7 @@
             "dtg": "221700Z OCT 24",
             "message": "1. COMMENCED OPERATIONS AT DESIGNATED SITE DELTA-7.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -723,6 +756,7 @@
             "dtg": "221830Z OCT 24",
             "message": "1. SPOTTED LARGE OIL SLICK AT 13\u00c2\u00b010'N, 70\u00c2\u00b050'W.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": {
                 "latitude": "13\u00b010'N",
                 "longitude": "70\u00b050'W"
@@ -736,6 +770,7 @@
             "dtg": "222000Z OCT 24",
             "message": "1. COMPLETED COVERT SURVEILLANCE OF SECTOR 9.",
             "alert": 0,
+            "priotiy": "CONFIDENTIAL",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -746,6 +781,7 @@
             "dtg": "222130Z OCT 24",
             "message": "1. MULTIPLE VESSELS ILLEGALLY FISHING IN PROTECTED WATERS.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No suspicious activity"
         },
@@ -756,6 +792,7 @@
             "dtg": "222300Z OCT 24",
             "message": "1. RESPONDED TO DISTRESS CALL FROM YACHT \"SEABREEZE\".",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -766,6 +803,7 @@
             "dtg": "230030Z OCT 24",
             "message": "1. INTERCEPTED ENCRYPTED COMMUNICATIONS FROM UNKNOWN SOURCE.",
             "alert": 0,
+            "priotiy": "SECRET",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -776,6 +814,7 @@
             "dtg": "230200Z OCT 24",
             "message": "1. COMPLETED INSTALLATION OF NEW TURBINE ARRAY.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -786,6 +825,7 @@
             "dtg": "230330Z OCT 24",
             "message": "1. DETECTED UNAUTHORIZED DATA TRANSMISSION FROM OCEAN BUOY.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -796,6 +836,7 @@
             "dtg": "230500Z OCT 24",
             "message": "1. MAIN LIGHT MECHANISM FAILURE AT POINT NEBULA LIGHTHOUSE.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -806,6 +847,7 @@
             "dtg": "230630Z OCT 24",
             "message": "1. DETECTED SERIES OF UNDERWATER SEISMIC EVENTS.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -816,6 +858,7 @@
             "dtg": "230800Z OCT 24",
             "message": "1. COMPLETED LARGE-SCALE NAVAL EXERCISE IN SECTOR 12.",
             "alert": 0,
+            "priotiy": "CONFIDENTIAL",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -826,6 +869,7 @@
             "dtg": "230930Z OCT 24",
             "message": "1. INTERCEPTED LARGE TRAWLER VIOLATING FISHING REGULATIONS.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -836,6 +880,7 @@
             "dtg": "231100Z OCT 24",
             "message": "1. DISCOVERED WRECK OF 18TH CENTURY MERCHANT SHIP.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -846,6 +891,7 @@
             "dtg": "231230Z OCT 24",
             "message": "1. INTERCEPTED SUSPICIOUS FAST BOAT AT 13\u00c2\u00b040'N, 70\u00c2\u00b050'W.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": {
                 "latitude": "13\u00b040'N",
                 "longitude": "70\u00b050'W"
@@ -859,6 +905,7 @@
             "dtg": "231400Z OCT 24",
             "message": "1. HAZARDOUS MATERIAL SPILL REPORTED IN SHIPPING LANE.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -869,6 +916,7 @@
             "dtg": "231530Z OCT 24",
             "message": "1. COMPLETED RECONNAISSANCE FLIGHT OVER DISPUTED WATERS.",
             "alert": 0,
+            "priotiy": "CONFIDENTIAL",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -879,6 +927,7 @@
             "dtg": "231700Z OCT 24",
             "message": "1. DETECTED ANOMALOUS ACOUSTIC SIGNATURE AT 12\u00c2\u00b040'N, 70\u00c2\u00b055'W.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": {
                 "latitude": "12\u00b040'N",
                 "longitude": "70\u00b055'W"
@@ -892,6 +941,7 @@
             "dtg": "231830Z OCT 24",
             "message": "1. PIRACY ATTEMPT THWARTED ON CONTAINER SHIP \"GLOBAL EXPRESS\".",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -902,6 +952,7 @@
             "dtg": "232000Z OCT 24",
             "message": "1. DISCOVERED UNIQUE HYDROTHERMAL VENT ECOSYSTEM AT 12\u00c2\u00b035'N, 71\u00c2\u00b025'W.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": {
                 "latitude": "12\u00b035'N",
                 "longitude": "71\u00b025'W"
@@ -915,6 +966,7 @@
             "dtg": "232130Z OCT 24",
             "message": "1. DETECTED UNIDENTIFIED AERIAL OBJECT AT 13\u00c2\u00b050'N, 70\u00c2\u00b040'W.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": {
                 "latitude": "13\u00b050'N",
                 "longitude": "70\u00b040'W"
@@ -928,6 +980,7 @@
             "dtg": "232300Z OCT 24",
             "message": "1. MASS STRANDING EVENT IN PROGRESS AT CRESCENT BAY.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -938,6 +991,7 @@
             "dtg": "240030Z OCT 24",
             "message": "1. EXPLOSION REPORTED ON DRILLING DECK.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -948,6 +1002,7 @@
             "dtg": "240200Z OCT 24",
             "message": "1. COVERT INSERTION COMPLETED AT OBJECTIVE FALCON.",
             "alert": 0,
+            "priotiy": "TOP SECRET",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -958,6 +1013,7 @@
             "dtg": "240330Z OCT 24",
             "message": "1. SUDDEN PRESSURE DROP DETECTED ACROSS MULTIPLE BUOYS.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -968,6 +1024,7 @@
             "dtg": "240500Z OCT 24",
             "message": "1. COMPLETED RESUPPLY OPERATION WITH SSN BARRACUDA.",
             "alert": 0,
+            "priotiy": "CONFIDENTIAL",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -978,6 +1035,7 @@
             "dtg": "240630Z OCT 24",
             "message": "1. DETECTED LARGE TOXIC ALGAL BLOOM FORMING.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -988,6 +1046,7 @@
             "dtg": "240800Z OCT 24",
             "message": "1. SPOTTED DEBRIS FIELD AT 13\u00c2\u00b040'N, 70\u00c2\u00b050'W.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": {
                 "latitude": "13\u00b040'N",
                 "longitude": "70\u00b050'W"
@@ -1001,6 +1060,7 @@
             "dtg": "240930Z OCT 24",
             "message": "1. COMPLETED HIGH-RESOLUTION MAPPING OF SEAFLOOR IN SECTOR 17.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1011,6 +1071,7 @@
             "dtg": "241100Z OCT 24",
             "message": "1. INTERCEPTED ENCRYPTED TRANSMISSIONS FROM UNKNOWN VESSEL.",
             "alert": 0,
+            "priotiy": "SECRET",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1021,6 +1082,7 @@
             "dtg": "241230Z OCT 24",
             "message": "1. MASSIVE FISH DIE-OFF OBSERVED IN PROTECTED WATERS.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1031,6 +1093,7 @@
             "dtg": "241400Z OCT 24",
             "message": "1. COMPLETED SURVEY OF POTENTIAL MINING SITE BRAVO.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1041,6 +1104,7 @@
             "dtg": "241530Z OCT 24",
             "message": "1. INTERCEPTED VESSEL SUSPECTED OF HUMAN TRAFFICKING.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1051,6 +1115,7 @@
             "dtg": "241700Z OCT 24",
             "message": "1. STRONG EARTHQUAKE DETECTED, MAGNITUDE 7.8.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1061,6 +1126,7 @@
             "dtg": "241830Z OCT 24",
             "message": "1. UNIDENTIFIED SUBMARINE PERISCOPE SIGHTED NEAR BASE PERIMETER.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1071,6 +1137,7 @@
             "dtg": "242000Z OCT 24",
             "message": "1. ABNORMAL READINGS FROM TURBINE CLUSTER 7.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1081,6 +1148,7 @@
             "dtg": "242130Z OCT 24",
             "message": "1. DISCOVERED INTACT ANCIENT SHIPWRECK AT 13\u00c2\u00b030'N, 71\u00c2\u00b020'W.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": {
                 "latitude": "13\u00b030'N",
                 "longitude": "71\u00b020'W"
@@ -1094,6 +1162,7 @@
             "dtg": "242300Z OCT 24",
             "message": "1. RESPONDING TO DISTRESS CALL FROM CRUISE SHIP \"OCEANIC DREAM\".",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1104,6 +1173,7 @@
             "dtg": "250030Z OCT 24",
             "message": "1. DETECTED UNUSUAL SEISMIC ACTIVITY AT 12\u00c2\u00b055'N, 71\u00c2\u00b040'W.",
             "alert": 0,
+            "priotiy": "CONFIDENTIAL",
             "coordinates": {
                 "latitude": "12\u00b055'N",
                 "longitude": "71\u00b040'W"
@@ -1117,6 +1187,7 @@
             "dtg": "250200Z OCT 24",
             "message": "1. OBSERVED UNPRECEDENTED GATHERING OF VARIOUS MARINE SPECIES.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1127,6 +1198,7 @@
             "dtg": "250330Z OCT 24",
             "message": "1. RADAR CONTACT WITH FAST-MOVING, LOW-FLYING OBJECT.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1137,6 +1209,7 @@
             "dtg": "250500Z OCT 24",
             "message": "1. ROGUE WAVE REPORTED BY MULTIPLE VESSELS.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1147,6 +1220,7 @@
             "dtg": "250630Z OCT 24",
             "message": "1. SUCCESSFULLY NEUTRALIZED UNDERWATER LISTENING DEVICE.",
             "alert": 0,
+            "priotiy": "SECRET",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1157,6 +1231,7 @@
             "dtg": "250800Z OCT 24",
             "message": "1. DETECTED MASSIVE METHANE RELEASE EVENT.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1167,6 +1242,7 @@
             "dtg": "250930Z OCT 24",
             "message": "1. ENCOUNTERED UNEXPECTED GEOLOGICAL FORMATION AT MINING SITE.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1177,6 +1253,7 @@
             "dtg": "251100Z OCT 24",
             "message": "1. INTERCEPTED SUSPICIOUS VESSEL AT 13\u00c2\u00b020'N, 70\u00c2\u00b030'W.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": {
                 "latitude": "13\u00b020'N",
                 "longitude": "70\u00b030'W"
@@ -1190,6 +1267,7 @@
             "dtg": "251230Z OCT 24",
             "message": "1. RECORDED UNUSUAL WHALE VOCALIZATIONS IN SECTOR 8.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1200,6 +1278,7 @@
             "dtg": "251400Z OCT 24",
             "message": "1. COMPLETED SWEEP OF SUSPECTED HOSTILE SUBMARINE ACTIVITY AREA.",
             "alert": 0,
+            "priotiy": "CONFIDENTIAL",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1210,6 +1289,7 @@
             "dtg": "251530Z OCT 24",
             "message": "1. EXPERIENCING UNEXPECTED PRESSURE BUILDUP IN WELL 7.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1220,6 +1300,7 @@
             "dtg": "251700Z OCT 24",
             "message": "1. INVESTIGATED TROPICAL DISTURBANCE AT 14\u00c2\u00b000'N, 72\u00c2\u00b000'W.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": {
                 "latitude": "14\u00b000'N",
                 "longitude": "72\u00b000'W"
@@ -1233,6 +1314,7 @@
             "dtg": "251830Z OCT 24",
             "message": "1. OBSERVED UNIDENTIFIED UNDERWATER VEHICLE AT 12\u00c2\u00b040'N, 71\u00c2\u00b005'W.",
             "alert": 0,
+            "priotiy": "SECRET",
             "coordinates": {
                 "latitude": "12\u00b040'N",
                 "longitude": "71\u00b005'W"
@@ -1246,6 +1328,7 @@
             "dtg": "252000Z OCT 24",
             "message": "1. DETECTED LARGE-SCALE CHEMICAL SPILL AT 13\u00c2\u00b015'N, 70\u00c2\u00b050'W.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": {
                 "latitude": "13\u00b015'N",
                 "longitude": "70\u00b050'W"
@@ -1259,6 +1342,7 @@
             "dtg": "252130Z OCT 24",
             "message": "1. TRACKED FORMATION OF UNIDENTIFIED AIRCRAFT ENTERING RESTRICTED AIRSPACE.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1269,6 +1353,7 @@
             "dtg": "252300Z OCT 24",
             "message": "1. DISCOVERED UNIQUE BIOLUMINESCENT PHENOMENON AT 12\u00c2\u00b055'N, 71\u00c2\u00b030'W.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": {
                 "latitude": "12\u00b055'N",
                 "longitude": "71\u00b030'W"
@@ -1282,6 +1367,7 @@
             "dtg": "260030Z OCT 24",
             "message": "1. SUSPICIOUS PACKAGE DETECTED DURING ROUTINE SCAN OF INCOMING CARGO.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No suspicious activity"
         },
@@ -1292,6 +1378,7 @@
             "dtg": "260200Z OCT 24",
             "message": "1. ENCOUNTERED MASSIVE SCHOOL OF UNIDENTIFIED FISH SPECIES.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1302,6 +1389,7 @@
             "dtg": "260330Z OCT 24",
             "message": "1. DETECTED SOPHISTICATED CYBER ATTACK ON NAVAL COMMUNICATIONS NETWORK.",
             "alert": 0,
+            "priotiy": "SECRET",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1312,6 +1400,7 @@
             "dtg": "260500Z OCT 24",
             "message": "1. RESPONDING TO DISTRESS SIGNAL FROM PRIVATE YACHT \"SEA SPIRIT\".",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1322,6 +1411,7 @@
             "dtg": "260630Z OCT 24",
             "message": "1. DETECTED SERIES OF UNDERWATER EXPLOSIONS.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1332,6 +1422,7 @@
             "dtg": "260800Z OCT 24",
             "message": "1. OBSERVED MASS DIE-OFF OF CORAL IN PROTECTED REEF.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1342,6 +1433,7 @@
             "dtg": "260930Z OCT 24",
             "message": "1. COMPLETED SURVEY OF POTENTIAL MINING SITE DELTA.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1352,6 +1444,7 @@
             "dtg": "261100Z OCT 24",
             "message": "1. RECORDING EXTREME WEATHER CONDITIONS IN SECTOR 6.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1362,6 +1455,7 @@
             "dtg": "261230Z OCT 24",
             "message": "1. COMPLETED COVERT RESUPPLY OF SSN BARRACUDA.",
             "alert": 0,
+            "priotiy": "CONFIDENTIAL",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1372,6 +1466,7 @@
             "dtg": "261400Z OCT 24",
             "message": "1. UNIDENTIFIED SURFACE VESSELS APPROACHING TERRITORIAL WATERS.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1382,6 +1477,7 @@
             "dtg": "261530Z OCT 24",
             "message": "1. DETECTED SIGNIFICANT SEISMIC ACTIVITY AT 13\u00c2\u00b015'N, 71\u00c2\u00b025'W.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": {
                 "latitude": "13\u00b015'N",
                 "longitude": "71\u00b025'W"
@@ -1395,6 +1491,7 @@
             "dtg": "261700Z OCT 24",
             "message": "1. INTERCEPTED ENCRYPTED TRANSMISSIONS FROM UNKNOWN SOURCE.",
             "alert": 0,
+            "priotiy": "SECRET",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1405,6 +1502,7 @@
             "dtg": "261830Z OCT 24",
             "message": "1. EXPERIENCING CATASTROPHIC FAILURE OF MULTIPLE TURBINES.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1415,6 +1513,7 @@
             "dtg": "262000Z OCT 24",
             "message": "1. DISCOVERED UNKNOWN SPECIES OF GIANT SQUID.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1425,6 +1524,7 @@
             "dtg": "262130Z OCT 24",
             "message": "1. SPOTTED LARGE DEBRIS FIELD AT 13\u00c2\u00b050'N, 71\u00c2\u00b005'W.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": {
                 "latitude": "13\u00b050'N",
                 "longitude": "71\u00b005'W"
@@ -1438,6 +1538,7 @@
             "dtg": "201700Z OCT 24",
             "message": "1. DETECTED SUBMARINE PERISCOPE AT 13\u00c2\u00b045'N, 71\u00c2\u00b023'W AT 1645Z.",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": {
                 "latitude": "13\u00b045'N",
                 "longitude": "71\u00b023'W"
@@ -1451,6 +1552,7 @@
             "dtg": "211030Z OCT 24",
             "message": "1. WEATHER ADVISORY: TROPICAL STORM APPROACHING.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1461,6 +1563,7 @@
             "dtg": "221545Z OCT 24",
             "message": "1. SPOTTED VESSEL MATCHING DESCRIPTION OF WANTED SMUGGLING SHIP.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": null,
             "additional_info": "Suspicious activity detected"
         },
@@ -1471,6 +1574,7 @@
             "dtg": "231200Z OCT 24",
             "message": "1. COMPLETED UNDERWATER MAPPING OF SECTOR 4.",
             "alert": 0,
+            "priotiy": "CONFIDENTIAL",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1481,6 +1585,7 @@
             "dtg": "241400Z OCT 24",
             "message": "1. PORT CLOSURE DUE TO MAINTENANCE.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1491,6 +1596,7 @@
             "dtg": "251830Z OCT 24",
             "message": "1. DISTRESS CALL RECEIVED FROM YACHT \"SERENITY\"",
             "alert": 1,
+            "priotiy": "URGENT",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1501,6 +1607,7 @@
             "dtg": "261045Z OCT 24",
             "message": "1. OIL SPILL DETECTED AT 13\u00c2\u00b025'N, 71\u00c2\u00b020'W.",
             "alert": 1,
+            "priotiy": "IMMEDIATE",
             "coordinates": {
                 "latitude": "13\u00b025'N",
                 "longitude": "71\u00b020'W"
@@ -1514,6 +1621,7 @@
             "dtg": "270830Z OCT 24",
             "message": "1. INTERCEPTED FISHING VESSEL \"LUCKY STAR\" IN PROTECTED MARINE RESERVE.",
             "alert": 0,
+            "priotiy": "PRIORITY",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1524,6 +1632,7 @@
             "dtg": "281200Z OCT 24",
             "message": "1. INTERCEPTED COMMUNICATIONS SUGGEST POSSIBLE HOSTILE SUBMARINE ACTIVITY.",
             "alert": 0,
+            "priotiy": "SECRET",
             "coordinates": null,
             "additional_info": "No additional info"
         },
@@ -1534,6 +1643,7 @@
             "dtg": "291600Z OCT 24",
             "message": "1. LIGHTHOUSE AT 13\u00c2\u00b005'N, 70\u00c2\u00b020'W UNDERGOING URGENT REPAIRS.",
             "alert": 0,
+            "priotiy": "ROUTINE",
             "coordinates": {
                 "latitude": "13\u00b005'N",
                 "longitude": "70\u00b020'W"

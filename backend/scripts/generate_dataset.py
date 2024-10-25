@@ -1,8 +1,9 @@
 import re
 import json
+from rag_pipeline import process_message_rag_pipeline
 
+    
 def clean_text(text):
-    # Remove encoded characters like \u00c2\u00b0 (degree symbol) and replace with normal degree symbol
     return text.replace("\u00c2\u00b0", "°")
 
 # Extracting data from reports
@@ -18,10 +19,16 @@ def extract_from_reports(reports):
             "coordinates": extract_coordinates(report.get("Report")),
             "heading": extract_heading(report.get("Report")),
             "speed": extract_speed(report.get("Report")),
+            "alert": process_message_rag_pipeline(report.get("Report"), "status/priority of the message into the following categories: urgent/immediate/top secret/secret/confidential/routine/secret, if its urgent or immediate return 1 else 0"), 
             "imo_number": extract_imo_number(report.get("Report")),
-            "priority": 0,  # Default is no alert in reports unless it's a message
-            "additional_info": extract_additional_info(report.get("Report"))
+            "priority": process_message_rag_pipeline(report.get("Report"), "status/priority of the message into the following categories: urgent/immediate/top secret/secret/confidential/routine/secret"),
         }
+        for field in ["date", "time", "location", "vessel_name", "coordinates", "heading", "speed", "imo_number"]:
+            if structured_report[field] is None or structured_report[field] == "":
+                # Call the RAG pipeline to try to extract missing information
+                structured_report[field] = process_message_rag_pipeline(report.get("Report"), f"Extract {field} from the report")
+
+        parsed_reports.append(structured_report)
         parsed_reports.append(structured_report)
     
     return parsed_reports
@@ -34,12 +41,13 @@ def extract_from_comm_messages(comm_messages):
         structured_message = {
             "from": message.get("FROM"),
             "to": message.get("TO"),
-            "priority": extract_priority(message.get("PRIORITY")),
             "dtg": message.get("DTG"),
+            "vessel_name": extract_vessel_name(message.get("MESSAGE")),
             "message": message.get("MESSAGE"),
             "alert": extract_priority(message.get("PRIORITY")),
+            "priority": message.get("PRIORITY"),
             "coordinates": extract_coordinates(message.get("MESSAGE")),
-            "additional_info": extract_additional_info(message.get("MESSAGE"))
+            "additional_info": process_message_rag_pipeline(message.get("MESSAGE"), "relevant information summary") + extract_additional_info(message.get("MESSAGE"))
         }
         parsed_messages.append(structured_message)
     
@@ -47,7 +55,6 @@ def extract_from_comm_messages(comm_messages):
 
 # Regular Expression Functions
 def extract_coordinates(text):
-    # Clean the input text to replace encoded characters
     cleaned_text = clean_text(text)
     
     # Regular expression to capture latitude and longitude
