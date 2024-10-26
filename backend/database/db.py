@@ -4,7 +4,7 @@ import sqlite3
 
 def create_database():
     """Create the SQLite database and necessary tables."""
-    conn = sqlite3.connect('contact_data.db')
+    conn = sqlite3.connect('./database/localdb/contacts.db')
 
     conn.execute('''
     CREATE TABLE IF NOT EXISTS contacts_basic (
@@ -35,23 +35,33 @@ def create_database():
     conn.commit()
     conn.close()
 
+def clean_field(field_value):
+    """Check for the specific error message and clean the field accordingly."""
+    error_message = "TypeError in RAG generation. Please check input dimensions and tensor compatibility."
+    if field_value == error_message:
+        return "unknown"
+    elif error_message in field_value:
+        return field_value.replace(error_message, "").strip()
+    return field_value
+
 def insert_into_contacts(conn, report):
     """Insert parsed report data into the contacts_basic table."""
+    meta_str = ""
     if report.get('alert') == 1:
         meta_str = "ALERT"
         
     contact_data = {
-        'contact_type': report.get('location'),
-        'contact_designator': report.get('vessel_name'),
-        'contact_current_location': f"{report['coordinates']['latitude']}, {report['coordinates']['longitude']}",
-        'contact_heading': report.get('heading'),
-        'contact_last_report_time': report.get('time'),
-        'contact_speed': report.get('speed'),
-        'contact_history': 'None',  
-        'contact_meta': f"{meta_str} {report.get('additional_info')}", 
-        'contact_status': report.get("priority"),
+        'contact_type': clean_field(report.get('location', '')),
+        'contact_designator': clean_field(report.get('vessel_name', '')),
+        'contact_current_location': clean_field(f"{report['coordinates'].get('latitude', '')}, {report['coordinates'].get('longitude', '')}"),
+        'contact_heading': clean_field(report.get('heading', '')),
+        'contact_last_report_time': clean_field(report.get('time', '')),
+        'contact_speed': clean_field(report.get('speed', '')),
+        'contact_history': 'None',
+        'contact_meta': clean_field(f"{meta_str} {report.get('additional_info', '')}"), 
+        'contact_status': clean_field(report.get("priority", "")),
     }
-    # Check if the vessel name already exists in the database
+    #Check if the vessel name already exists in the database
     existing_record = conn.execute('''
         SELECT contact_current_location, contact_last_report_time 
         FROM contacts_basic 

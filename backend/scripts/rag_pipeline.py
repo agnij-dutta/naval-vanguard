@@ -14,6 +14,8 @@ retriever = RagRetriever.from_pretrained(model_name, index_name="exact", use_dum
 
 # Set the retriever in the model
 model.set_retriever(retriever)
+model.to('cpu')
+
 
 def process_message_rag_pipeline(message, detail, tokenizer=tokenizer, model=model, retriever=retriever):
     prompt = f"Extract any detail you find about {detail} from the report field of the given data: {message}"

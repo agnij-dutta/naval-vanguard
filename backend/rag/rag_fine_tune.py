@@ -20,6 +20,7 @@ retriever = RagRetriever.from_pretrained(model_name, index_name="exact", use_dum
 dataset = Dataset.from_list(parsed_data["parsed_reports"]+parsed_data["parsed_comm_messages"])
 
 model.set_retriever(retriever)
+model.to('cpu')
 
 # Tokenize and prepare inputs
 def tokenize_function(examples):

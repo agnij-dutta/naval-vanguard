@@ -37,7 +37,7 @@ settings = Settings()
 
 class OCRProcessor:
     def __init__(self):
-        pytesseract.pytesseract.tesseract_cmd = 'tesseract'  # Update path if needed
+        pytesseract.pytesseract.tesseract_cmd = 'tesseract'  
         self.lang = settings.OCR_LANG
 
     def preprocess_image(self, image: np.ndarray) -> np.ndarray:

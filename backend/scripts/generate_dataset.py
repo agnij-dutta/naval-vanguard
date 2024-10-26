@@ -118,15 +118,16 @@ def parse_dataset(data):
         "parsed_comm_messages": parsed_messages
     }
 
-# Load the dataset from JSON
-with open(r'C:\Users\Agnij\Coding_projects\naval-vanguard\data\extracted_data.json', 'r') as f:
-    data = json.load(f)
+if __name__=='__main__':
+    # Load the dataset from JSON
+    with open(r'C:\Users\Agnij\Coding_projects\naval-vanguard\data\extracted_data.json', 'r') as f:
+        data = json.load(f)
 
-# Parse the data
-parsed_data = parse_dataset(data)
+    # Parse the data
+    parsed_data = parse_dataset(data)
 
-# Save the parsed data to a new JSON file
-with open('parsed_maritime_data.json', 'w') as outfile:
-    json.dump(parsed_data, outfile, indent=4)
+    # Save the parsed data to a new JSON file
+    with open(r'../data/parsed_maritime_data.json', 'w') as outfile:
+        json.dump(parsed_data, outfile, indent=4)
 
-print("Data parsed successfully and saved to 'parsed_maritime_data.json'.")
+    print("Data parsed successfully and saved to 'parsed_maritime_data.json'.")
