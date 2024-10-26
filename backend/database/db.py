@@ -39,10 +39,17 @@ def create_database():
 def clean_field(field_value):
     """Check for the specific error message and clean the field accordingly."""
     error_message = "TypeError in RAG generation. Please check input dimensions and tensor compatibility."
+    
+    # Handle NoneType values by returning a default "unknown"
+    if field_value is None:
+        return "unknown"
+    
     if field_value == error_message:
         return "unknown"
+    
     elif error_message in field_value:
         return field_value.replace(error_message, "").strip()
+    
     return field_value
 
 def insert_into_contacts(conn, report):
@@ -50,29 +57,39 @@ def insert_into_contacts(conn, report):
     meta_str = ""
     if report.get('alert') == 1:
         meta_str = "ALERT"
-        
+
+    # Check if coordinates are provided as a dictionary or string
+    coordinates = report.get('coordinates', '')
+    if isinstance(coordinates, dict):
+        latitude = coordinates.get('latitude', '')
+        longitude = coordinates.get('longitude', '')
+        contact_current_location = f"{latitude}, {longitude}"
+    else:
+        contact_current_location = coordinates  # Assuming it's already a formatted string
+    
     contact_data = {
         'contact_type': clean_field(report.get('location', '')),
         'contact_designator': clean_field(report.get('vessel_name', '')),
-        'contact_current_location': clean_field(f"{report['coordinates'].get('latitude', '')}, {report['coordinates'].get('longitude', '')}"),
+        'contact_current_location': clean_field(contact_current_location),
         'contact_heading': clean_field(report.get('heading', '')),
         'contact_last_report_time': clean_field(report.get('time', '')),
         'contact_speed': clean_field(report.get('speed', '')),
-        'contact_history': 'None',
+        'contact_history': 'None',  # Default, may be updated if record exists
         'contact_meta': clean_field(f"{meta_str} {report.get('additional_info', '')}"), 
         'contact_status': clean_field(report.get("priority", "")),
     }
-    #Check if the vessel name already exists in the database
+
+    # Check if the vessel name already exists in the database
     existing_record = conn.execute('''
         SELECT contact_current_location, contact_last_report_time 
         FROM contacts_basic 
         WHERE contact_designator = :contact_designator
     ''', {'contact_designator': contact_data['contact_designator']}).fetchone()
 
-    # If a record exists, update the contact_history
+    # If a record exists, update the contact_history (convert tuple to string)
     if existing_record:
         current_location, last_report_time = existing_record
-        contact_data['contact_history'] = (current_location, last_report_time)
+        contact_data['contact_history'] = f"{current_location}, {last_report_time}"
     else:
         contact_data['contact_history'] = 'None'
 

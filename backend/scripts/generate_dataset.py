@@ -1,6 +1,6 @@
 import re
 import json
-from rag_pipeline import process_message_rag_pipeline
+from .rag_pipeline import process_message_rag_pipeline
     
 def clean_text(text):
     return text.replace("\u00c2\u00b0", "°")
