@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import JSONResponse, HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 import sqlite3
@@ -11,13 +11,13 @@ from database.db import *
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import os
+import shutil
 
 ocr = OCRProcessor()
-upload = r'uploads'
+upload_folder = r'uploads'
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
-app.config['uploadFolder'] = upload
 
 '''
 THIS CODE IS SHIT, DONT FOLLOW THIS CODE JUST COOK UP SOMETHING USING FASTAPI. IF NOT POSSIBLE THEN PIVOT TO FLASK. BUT NOT DJANGO.
@@ -37,7 +37,7 @@ create_database()
 #if text run process_message_rag_pipeline(message, )
 #if file run ocr.process_image(image_path)
 
-with open(r'./data/parsed_maritime_data.json', 'r') as infile:
+with open(r'./database/data/parsed_maritime_data.json', 'r') as infile:
     parsed_data = json.load(infile)
 
 class TextInput(BaseModel):
@@ -60,20 +60,29 @@ async def submit_text(data: TextInput):
 
 @app.post("/api/post/file")
 async def upload_file(file: UploadFile = File(...)):
-    filename = file.filename
-    path = os.path.join(app.config['uploadFolder'], filename)
-    file.save(path)
-    text = ocr.process_image(path)
-    report = {
+    try:
+        filename = file.filename
+        file_path = os.path.join(upload_folder, filename)
+
+        # Save the uploaded file
+        with open(file_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+
+        # Process the uploaded file with OCR
+        text = ocr.process_image(file_path)
+        
+        report = {
             "location": process_message_rag_pipeline(text, "The location of the contact (not coordinates)"),
             "vessel_name": extract_vessel_name(text),
-            "message": data.text,
+            "message": text,
             "priority": process_message_rag_pipeline(text, "status/priority of the message into the following categories: urgent/immediate/top secret/secret/confidential/routine/secret"),
             "coordinates": extract_coordinates(text),
             "additional_info": process_message_rag_pipeline(text, "relevant information summary") + extract_additional_info(text)
         }
-    insert_into_contacts(conn, report)
-    return {"received_text": report["message"]+report["additional_info"]}
+        insert_into_contacts(conn, report)
+        return {"received_text": report["message"] + report["additional_info"]}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/")
 async def redirect_to_ops():
@@ -82,6 +91,12 @@ async def redirect_to_ops():
 @app.get("/ops", response_class=HTMLResponse)
 async def read_ops():
     with open("static/dashboard.html") as f:
+        return HTMLResponse(content=f.read())
+    
+
+@app.get("/team", response_class=HTMLResponse)
+async def read_ops():
+    with open("static/team.html") as f:
         return HTMLResponse(content=f.read())
 
 
@@ -114,5 +129,5 @@ async def read_records():
     return records_as_lists
 
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000, debug=True)
+if __name__ == "_main_":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
