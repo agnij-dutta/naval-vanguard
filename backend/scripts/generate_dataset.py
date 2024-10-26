@@ -35,8 +35,8 @@ def extract_from_comm_messages(comm_messages):
     
     for message in comm_messages:
         structured_message = {
-            "from": message.get("FROM"),
-            "to": message.get("TO"),
+            "location": message.get("FROM"),
+            "receiver": message.get("TO"),
             "dtg": message.get("DTG"),
             "vessel_name": extract_vessel_name(message.get("MESSAGE")),
             "message": message.get("MESSAGE"),

@@ -1,6 +1,7 @@
 # database.py
 
 import sqlite3
+import json
 
 def create_database():
     """Create the SQLite database and necessary tables."""
@@ -86,3 +87,84 @@ def insert_into_contacts(conn, report):
 
     # Commit the transaction
     conn.commit()
+
+
+
+def insert_into_zones(conn, zone):
+    """Insert parsed zone data into the zones_basic table."""
+    
+    # Prepare the data for insertion
+    zone_data = {
+        'name': zone.get('name', ''),
+        'type': zone.get('type', ''),
+        'description': zone.get('type', ''),  # Since the schema uses description, but JSON uses 'type'
+        'coordinates_json': json.dumps(zone.get('coordinates', [])),  # Convert coordinates to JSON format
+        'significance_level': zone.get('significance', '')
+    }
+    
+    # Insert the new record into the zones_basic table
+    conn.execute('''
+    INSERT INTO zones_basic (name, type, description, coordinates_json, significance_level)
+    VALUES (:name, :type, :description, :coordinates_json, :significance_level)
+    ''', zone_data)
+
+
+def populate_data_from_json(db_path, json_file_path):
+    """Populate the SQLite database with data from the parsed_maritime_data.json."""
+    
+    # Open and load the JSON file
+    with open(json_file_path, 'r') as f:
+        data = json.load(f)
+
+    # Extract the parsed reports and communication messages
+    parsed_reports = data.get('parsed_reports', [])
+    parsed_comm_messages = data.get('parsed_comm_messages', [])
+    
+    # Connect to the SQLite database
+    conn = sqlite3.connect(db_path)
+
+    # Insert each parsed report into the database
+    for report in parsed_reports:
+        insert_into_contacts(conn, report)
+    
+    for message in parsed_comm_messages:
+        insert_into_contacts(conn, message)
+    
+    # Close the database connection
+    conn.close()
+
+    print("Data successfully populated into the database.")
+
+
+def populate_zones_from_json(db_path, json_file_path):
+    """Populate the zones_basic table with data from the JSON file."""
+
+    # Open and load the JSON file
+    with open(json_file_path, 'r') as f:
+        data = json.load(f)
+    
+    # Extract the strategic zones
+    strategic_zones = data.get('strategic_zones', [])
+    
+    # Connect to the SQLite database
+    conn = sqlite3.connect(db_path)
+
+    # Insert each zone into the zones_basic table
+    for zone in strategic_zones:
+        insert_into_zones(conn, zone)
+    
+    # Commit and close the database connection
+    conn.commit()
+    conn.close()
+
+    print("Zones successfully populated into the database.")
+
+
+if __name__=="__main__":
+    db_path = './localdb/contacts.db'
+    json_file_path = './data/parsed_maritime_data.json'
+    populate_data_from_json(db_path, json_file_path)
+    db_path = './localdb/contacts.db'
+    json_file_path = './data/consolidated_data.json'
+    populate_zones_from_json(db_path, json_file_path)
+    

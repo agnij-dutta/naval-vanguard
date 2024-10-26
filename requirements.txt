@@ -3,6 +3,5 @@ datasets
 torch
 opencv-python
 pytesseract
-spacy
 leaflet
-langchain
+fastapi
